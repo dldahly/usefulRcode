@@ -1,0 +1,31 @@
+####################################################################################################
+
+# Data manipulation
+
+
+
+
+# Drop a variable from a dataframe
+
+  df <- df[, !(names(df) %in% "var")])  # Will drop the column labelled "var" from the dataframe
+
+# Drop multiple variables from a dataframe
+
+  vars  <- c("var1", "var2") 
+  
+  df <- df[, !(names(df) %in% vars)])  # Will drop the columns listed in vars from the dataframe
+  
+# Keep only certain variables in a dataframe
+ 
+  vars  <- c("var1", "var2") 
+  
+  df <- df[vars]
+
+# Drop all obserations (rows) with any missing data
+
+  df <- df[complete.cases(df), ]
+
+
+
+
+# Variable manipulation
