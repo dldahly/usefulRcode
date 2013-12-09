@@ -37,3 +37,19 @@
   aggregate(x ~ y + z, min, data = data, subset = v < 5) # Gives the minimum value of x across
                                                          # levels of y and z, in a data frame
                                                          # where v < 5.
+
+
+####################################################################################################
+
+# Graphs and Plots
+
+####################################################################################################
+
+# Using custom color palettes, based on ColorBrewer
+
+  brewer.pal(6, "Blues")                                # Look at values for "Blues" with 6 hues. 
+  cset <- c("#9ECAE1", "#6BAED6", "#3182BD" ,"#08519C") # Cut and paste "Blues", without the 2
+                                                        # lighter hues. 
+                                                        
+  + scale_color_manual(name = "Title", values = cset)   # Use the new set of values in your plot 
+                                                        # with ggplot2.
