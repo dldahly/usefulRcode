@@ -2,8 +2,7 @@
 
 # Data manipulation
 
-
-
+####################################################################################################
 
 # Drop a variable from a dataframe
 
@@ -27,5 +26,14 @@
 
 
 
+####################################################################################################
 
 # Variable manipulation
+
+####################################################################################################
+
+# Collapse variables across levels of other variables
+
+  aggregate(x ~ y + z, min, data = data, subset = v < 5) # Gives the minimum value of x across
+                                                         # levels of y and z, in a data frame
+                                                         # where v < 5.
