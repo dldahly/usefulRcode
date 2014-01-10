@@ -1,28 +1,45 @@
 ####################################################################################################
 
+# Explore your data frame
+
+# List the class of all columns (variables) in a data frame
+
+  str(dataFrame)
+
+# Sort a data frame by column
+
+  dataFrame <- dataFrame[order(dataFrame[,3]), ]  # Sort by column 3 in acending order
+  dataFrame <- dataFrame[order(-dataFrame[,3]), ] # Sort by column 3 in decending order
+  
+####################################################################################################
+
 # Data manipulation
 
 ####################################################################################################
 
 # Drop a variable from a dataframe
 
-  df <- df[, !(names(df) %in% "var")])  # Will drop the column labelled "var" from the dataframe
+  dataFrame <- dataFrame[, !(names(df) %in% "var")])  # Will drop the column labelled "var" from the dataframe
 
 # Drop multiple variables from a dataframe
 
   vars  <- c("var1", "var2") 
   
-  df <- df[, !(names(df) %in% vars)])  # Will drop the columns listed in vars from the dataframe
+  dataFrame <- dataFrame[, !(names(df) %in% vars)])  # Will drop the columns listed in vars from the dataframe
   
 # Keep only certain variables in a dataframe
  
   vars  <- c("var1", "var2") 
   
-  df <- df[vars]
+  dataFrame <- dataFrame[vars]
 
 # Drop all obserations (rows) with any missing data
 
-  df <- df[complete.cases(df), ]
+  dataFrame <- dataFrame[complete.cases(df), ]
+  
+# Drop observations with missing data for a given variable
+
+  dataFrame <- dataFrame[!is.na(dataFrame$variable), ]
 
 
 
